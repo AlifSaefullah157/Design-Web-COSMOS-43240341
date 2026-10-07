@@ -76,7 +76,7 @@ Platform ini dirancang khusus untuk ekosistem pendidikan dan riset sains antarik
 ## 🌐 Tautan Web Live Preview Proyek
 
 * **GitHub Pages Live Preview:** [https://alifsaefullah157.github.io/Design-Web-COSMOS-43240341/](https://alifsaefullah157.github.io/Design-Web-COSMOS-43240341/)
-* **GitHub Pages Deployment URL:** [https://alifsaefullah157.github.io/Design-web-COSMOS-43240341/](https://alifsaefullah157.github.io/Design-web-COSMOS-43240341/)
+* **GitHub Pages Deployment URL:** [https://alifsaefullah157.github.io/Design-Web-COSMOS-43240341/](https://alifsaefullah157.github.io/Design-Web-COSMOS-43240341/)
 
 ---
 
