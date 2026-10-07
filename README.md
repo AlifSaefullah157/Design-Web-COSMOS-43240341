@@ -86,5 +86,5 @@ Platform ini dirancang dengan fleksibilitas ganda: dapat dijalankan langsung men
 ### Opsi A: Menjalankan Langsung Tanpa Instalasi (Rekomendasi Tercepat)
 1. Unduh atau clone repositori ini ke komputer Anda:
    ```bash
-   git clone [https://github.com/AlifSaefullah157/Design-web-COSMOS-43240341.git](https://github.com/AlifSaefullah157/Design-web-COSMOS-43240341.git)
-   cd Design-web-COSMOS-43240341
+   git clone [https://github.com/AlifSaefullah157/Design-Web-COSMOS-43240341.git](https://github.com/AlifSaefullah157/Design-Web-COSMOS-43240341.git)
+   cd Design-Web-COSMOS-43240341
