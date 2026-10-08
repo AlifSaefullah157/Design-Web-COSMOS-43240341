@@ -1131,37 +1131,9 @@
     `;
   }
 
-  // Bilah Status Atas & Header Terkunci (Sesuai Desain Stitch HeaderNav & TopStatusBar)
-    // Komponen Bilah Status Handphone Atas (Tampil di mode ponsel / mobile viewport untuk semua layar)
+  // Bilah Status Atas (Dinonaktifkan / Dihilangkan agar tampilan mobile bersih tanpa navbar handphone)
   function renderMobilePhoneTopBar(isFixed = false) {
-    if (isFixed) {
-      return `
-        <!-- Top Status Bar HP/Mobile: Terkunci Diam di Atas Layar Ponsel (Fixed, Tidak Bergerak saat Scroll) -->
-        <div class="fixed top-0 inset-x-0 z-50 pt-2 pb-1.5 px-6 flex md:hidden items-center justify-between text-xs text-[#bdc8d1] font-medium tracking-tight pointer-events-none select-none bg-[#0a0e18]/85 backdrop-blur-md border-b border-white/[0.04]">
-          <span class="font-semibold text-[13px] tracking-tight text-[#dfe2f1] font-space pl-1">
-            09:41
-          </span>
-          <div class="flex items-center gap-2 text-[#bdc8d1]">
-            <span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span>
-            <span class="material-symbols-outlined text-[16px]">wifi</span>
-            <span class="material-symbols-outlined text-[18px] rotate-90">battery_full</span>
-          </div>
-        </div>
-      `;
-    }
-    return `
-      <!-- Top Status Bar HP/Mobile: Di dalam Header Terkunci (Fixed Top Bar) -->
-      <div class="w-full pt-2 pb-1 px-6 flex md:hidden items-center justify-between text-xs text-[#bdc8d1] font-medium tracking-tight pointer-events-none select-none">
-        <span class="font-semibold text-[13px] tracking-tight text-[#dfe2f1] font-space pl-1">
-          09:41
-        </span>
-        <div class="flex items-center gap-2 text-[#bdc8d1]">
-          <span class="material-symbols-outlined text-[16px]">signal_cellular_alt</span>
-          <span class="material-symbols-outlined text-[16px]">wifi</span>
-          <span class="material-symbols-outlined text-[18px] rotate-90">battery_full</span>
-        </div>
-      </div>
-    `;
+    return '';
   }
 
   function renderHeaderBar() {
@@ -1186,12 +1158,9 @@
     const accent = getAccentClass();
 
     return `
-      <!-- Header Terkunci: Navbar Handphone & Navigasi Diam di Atas Layar (Fixed, Tidak Bergerak saat Scroll) -->
+      <!-- Header Terkunci: Navigasi Diam di Atas Layar (Fixed, Tidak Bergerak saat Scroll) -->
       <header class="fixed top-0 inset-x-0 z-40 w-full bg-[#0a0e18]/90 backdrop-blur-xl border-b border-[#262a35]/60 shadow-[0_2px_15px_rgba(0,0,0,0.5)]">
-        <!-- Top Status Bar HP/Mobile: HANYA tampil di layar seluler (flex md:hidden), DI KOMPUTER / PC OTOMATIS HILANG -->
-        ${renderMobilePhoneTopBar(false)}
-
-        <!-- Header Bar Tunggal: Judul, Indikator Sol, & Ikon Profil di Kanan (Tanpa Navbar Ganda di Atas) -->
+        <!-- Header Bar Tunggal: Judul, Indikator Sol, & Ikon Profil di Kanan -->
         <div class="h-14 sm:h-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
           <div class="flex items-center gap-2.5 min-w-0">
             ${cfg.isChild ? `
@@ -1309,11 +1278,9 @@
   // Sesuai dengan desain SplashScreen (cinematic opening sequence, rotating orbit rings, telemetry progress bar)
   function renderSplashScreen() {
     return `
-      <div class="relative w-full min-h-screen flex flex-col justify-between items-center text-slate-100 overflow-hidden select-none py-6 px-4 sm:px-6">
-        ${renderMobilePhoneTopBar(true)}
-
+      <div class="relative w-full min-h-screen flex flex-col justify-between items-center text-slate-100 overflow-hidden select-none py-4 sm:py-6 px-4 sm:px-6">
         <!-- Top Bar with Minimalist Skip Action & Live Telemetry -->
-        <div class="relative z-20 w-full pt-10 sm:pt-4 px-2 flex justify-between items-center max-w-5xl mx-auto">
+        <div class="relative z-20 w-full pt-2 sm:pt-4 px-2 flex justify-between items-center max-w-5xl mx-auto">
           <div class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 rounded-full bg-[#38bdf8] animate-ping"></span>
             <span class="font-space text-[11px] text-[#38bdf8] tracking-widest uppercase font-semibold">
@@ -1402,11 +1369,9 @@
   // Sesuai dengan desain identik ukuran kartu seragam & elegan
   function renderLoginScreen() {
     return `
-      <div class="relative w-full min-h-screen flex flex-col justify-between text-[#dfe2f1] select-none py-6 px-4 sm:px-6">
-        ${renderMobilePhoneTopBar(true)}
-
+      <div class="relative w-full min-h-screen flex flex-col justify-between text-[#dfe2f1] select-none py-4 sm:py-6 px-4 sm:px-6">
         <!-- Top telemetry status tracker -->
-        <div class="relative z-10 w-full max-w-5xl mx-auto flex items-center justify-between px-2 pt-10 sm:pt-1 opacity-70">
+        <div class="relative z-10 w-full max-w-5xl mx-auto flex items-center justify-between px-2 pt-2 sm:pt-1 opacity-70">
           <div class="flex items-center gap-1.5 font-space text-[10px] text-[#38bdf8] tracking-widest">
             <span class="w-1.5 h-1.5 rounded-full bg-[#38bdf8] animate-ping"></span>
             <span>COSMOS // AUTH PORTAL</span>
@@ -1541,11 +1506,6 @@
             </p>
           </div>
         </div>
-
-        <!-- Bottom Home Indicator -->
-        <div class="relative z-10 w-full pb-1 flex justify-center">
-          <div class="w-32 h-1 rounded-full bg-white/20 backdrop-blur-md"></div>
-        </div>
       </div>
     `;
   }
@@ -1554,11 +1514,9 @@
   // Sesuai dengan dimensi seragam & teratur persis seperti kartu Login
   function renderRegisterScreen() {
     return `
-      <div class="relative w-full min-h-screen flex flex-col justify-between text-[#dfe2f1] select-none py-6 px-4 sm:px-6">
-        ${renderMobilePhoneTopBar(true)}
-
+      <div class="relative w-full min-h-screen flex flex-col justify-between text-[#dfe2f1] select-none py-4 sm:py-6 px-4 sm:px-6">
         <!-- Top telemetry status bar -->
-        <div class="relative z-10 w-full max-w-5xl mx-auto flex items-center justify-between px-2 pt-10 sm:pt-1 opacity-70">
+        <div class="relative z-10 w-full max-w-5xl mx-auto flex items-center justify-between px-2 pt-2 sm:pt-1 opacity-70">
           <div class="flex items-center gap-1.5 font-space text-[10px] text-[#38bdf8] tracking-widest">
             <span class="w-1.5 h-1.5 rounded-full bg-[#38bdf8] animate-ping"></span>
             <span>COSMOS // ENROLLMENT</span>
@@ -1728,11 +1686,6 @@
             </p>
           </div>
         </div>
-
-        <!-- Bottom Home Bar Indicator -->
-        <div class="relative z-10 w-full pb-1 flex justify-center">
-          <div class="w-32 h-1 rounded-full bg-white/20 backdrop-blur-md"></div>
-        </div>
       </div>
     `;
   }
@@ -1741,11 +1694,9 @@
   // Sesuai dengan dimensi seragam & teratur persis seperti kartu Login & Register
   function renderForgotPasswordScreen() {
     return `
-      <div class="relative w-full min-h-screen flex flex-col justify-between text-[#dfe2f1] select-none py-6 px-4 sm:px-6">
-        ${renderMobilePhoneTopBar(true)}
-
+      <div class="relative w-full min-h-screen flex flex-col justify-between text-[#dfe2f1] select-none py-4 sm:py-6 px-4 sm:px-6">
         <!-- Top telemetry status bar -->
-        <div class="relative z-10 w-full max-w-5xl mx-auto flex items-center justify-between px-2 pt-10 sm:pt-1 opacity-70">
+        <div class="relative z-10 w-full max-w-5xl mx-auto flex items-center justify-between px-2 pt-2 sm:pt-1 opacity-70">
           <div class="flex items-center gap-1.5 font-space text-[10px] text-[#38bdf8] tracking-widest">
             <span class="w-1.5 h-1.5 rounded-full bg-[#38bdf8] animate-ping"></span>
             <span>COSMOS // CREDENTIAL RECOVERY</span>
@@ -1875,11 +1826,6 @@
               </button>
             </p>
           </div>
-        </div>
-
-        <!-- Bottom Home Indicator -->
-        <div class="relative z-10 w-full pb-1 flex justify-center">
-          <div class="w-32 h-1 rounded-full bg-white/20 backdrop-blur-md"></div>
         </div>
       </div>
     `;
@@ -2230,9 +2176,8 @@
 
     return `
       <div class="flex flex-col w-full text-[#dfe2f1] pb-28 md:pb-32 select-none">
-        <!-- Detail Header Terkunci (Fixed Top Bar HP & Navigasi, Tidak Bergerak saat Scroll) -->
+        <!-- Detail Header Terkunci (Navigasi Kembali, Tidak Bergerak saat Scroll) -->
         <header class="fixed top-0 inset-x-0 z-40 w-full bg-[#0a0e18]/90 backdrop-blur-xl border-b border-[#262a35]/60 shadow-[0_2px_15px_rgba(0,0,0,0.5)]">
-          ${renderMobilePhoneTopBar(false)}
           <div class="h-14 sm:h-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             <button data-action="go-back" type="button" class="inline-flex items-center gap-1.5 text-[#bdc8d1] hover:text-[#dfe2f1] transition-colors py-1.5 px-3 rounded-full bg-[#171b26] hover:bg-[#262a35] cursor-pointer font-space text-xs uppercase tracking-wider active:scale-95">
               <span class="material-symbols-outlined text-[18px] text-[#38bdf8]">arrow_back</span>
